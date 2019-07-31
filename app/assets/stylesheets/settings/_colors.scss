@@ -1,0 +1,46 @@
+// base
+$white: #fff;
+
+$blogger-blue: #267ea1;
+$blogger-green: #5eba7f;
+$blogger-orange: #f58a07;
+$blogger-red: #ed4337;
+$blogger-off-white: #fbfdff;
+$blogger-blue-white: #e8f0f8;
+$blogger-off-black: #222;
+$blogger-grey: #666;
+$blogger-light-blue: #9eb6c6;
+$blogger-polar-blue: #e6f3f9;
+$blogger-transparent-blue: rgba($blogger-light-blue, 0.3);
+
+// named
+$primary-color: $blogger-blue;
+$secondary-color: $blogger-green;
+
+$success: $blogger-green;
+$warning: $blogger-orange;
+$error: $blogger-red;
+$disabled: $blogger-transparent-blue;
+
+$default-background-color: $blogger-off-white;
+$table-header-background-color: $default-background-color;
+
+$primary-copy: $blogger-off-black;
+$secondary-copy: $blogger-grey;
+$on-dark-copy: $blogger-off-white;
+$disabled-copy: #999;
+
+$form-border-color: $blogger-light-blue;
+$divider-color: $blogger-transparent-blue;
+$hover-highlight-color: $blogger-transparent-blue;
+
+$sidebar-color: #2c89aa;
+$sidebar-top: #1e708d;
+$sidebar-highlight: #34a0c6;
+
+$button-shadow: #267ea1;
+
+$appbar-color: $default-background-color;
+$appbar-highlight: rgba($blogger-blue-white, 0.5);
+
+$sub-header-background: rgba($blogger-blue-white, 0.5);

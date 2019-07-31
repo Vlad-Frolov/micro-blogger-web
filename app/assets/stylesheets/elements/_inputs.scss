@@ -1,0 +1,8 @@
+textarea,
+[type='text'],
+[type='password'],
+[type='email'],
+[type='tel'],
+[type='number'] {
+  @include base-input;
+}

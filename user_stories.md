@@ -8,15 +8,29 @@ A micro blogging platform
 
 ## Tasks
 
+### Login/out Header links
+
+* Create a header bar that contains conditional login/logout links
+* Admins should also have a link to manage users
+
 ### User Bios
 
 As an author, I want to be able to write a short bio that
 is displayed with each of my postings.
 
+### Date Picker
+
+Please introduce a datepicker for the blog edit form.
+
 ### BUG: Publishing
 
 It has been reported that authors are not able to publish
 their blogs
+
+### User Table UI
+
+The admin users index table is a little tight. Provide some
+styling to increase the legibility.
 
 ### Moderation
 
@@ -25,6 +39,9 @@ of moderation that also unpublishes it.
 
 Once a blog post has this state, the author must edit and
 submit for another review before an admin will republish.
+
+### Flash Notice styling
+Please style the flash notices to be more apparent.
 
 ### Categories
 

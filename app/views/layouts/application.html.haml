@@ -1,0 +1,22 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    %title MicroBloggerWeb
+
+    %link{href: "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700", rel: "stylesheet"}/
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body.blogger-container
+    %header.blogger-header
+
+    %main.blogger-main
+      = render partial: 'shared/flash'
+      = yield

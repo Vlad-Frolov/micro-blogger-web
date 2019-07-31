@@ -1,0 +1,17 @@
+%h1 Articles
+
+- if policy(Blog).new?
+  = link_to 'New Article', new_blog_path
+
+- @blogs.each do |blog|
+  %section.blog-entry
+    %h2= blog.title
+    %p= blog.article
+    .author-tag
+      = blog.author.display_name
+      - unless blog.published_date.blank?
+        \ -
+        = l(Time.zone.parse(blog.published_date))
+      - if policy(blog).edit?
+        \ -
+        = link_to 'edit', edit_blog_url(blog)

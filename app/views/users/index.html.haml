@@ -1,0 +1,14 @@
+%p#notice= notice
+%h1 Users
+
+- if policy(User).create?
+  = link_to 'Create User', new_user_path
+
+%table
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= link_to user.display_name, edit_user_path(user)
+        %td= user.email
+        %td= user.role
+        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }

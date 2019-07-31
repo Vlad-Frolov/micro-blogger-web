@@ -35,21 +35,36 @@ guard :minitest, spring: "bin/rails test", all_after_pass: true do
   watch(%r{^app/views/(.*_mailer/)?([^/]+)\.erb$}) { ["test/mailers", "test/integration"] }
 end
 
-guard :rubocop, cli: %w[-D -S -a] do
+guard :rubocop, cli: %w[-DSa] do
   watch(/.rubocop.yml/)
   watch(/.+\.rb$/)
   watch(/Rakefile/)
   watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
 end
 
-guard 'brakeman', run_on_start: true, quiet: true do
-  ## Lets not watch files for brakeman, just scan on guard start, and full runs.
-  #
-  # watch(%r{^app/.+\.(erb|haml|rhtml|rb)$})
-  # watch(%r{^config/.+\.rb$})
-  # watch(%r{^lib/.+\.rb$})
-  # watch('Gemfile')
+guard :shell, all_on_start: true do
+  # ESLint
+  # watch %r{app/assets/javascripts/*/.*} do |file|
+  #   system %(echo "ESLint:\033[32m #{file[0]}\033[0m")
+  #   system %(./node_modules/eslint/bin/eslint.js #{file[0]})
+  # end
+
+  # sass-lint
+  watch %r{app/assets/stylesheets/*/.*scss$} do |file|
+    system %(echo "sass-lint:\033[32m #{file[0]}\033[0m")
+    system %(sass-lint --cache --config .sass-lint.yml '#{file[0]}' --verbose --no-exit)
+  end
 end
+
+# Haml update broke this
+# guard 'brakeman', run_on_start: true, quiet: true do
+#   ## Lets not watch files for brakeman, just scan on guard start, and full runs.
+#   #
+#   # watch(%r{^app/.+\.(erb|haml|rhtml|rb)$})
+#   # watch(%r{^config/.+\.rb$})
+#   # watch(%r{^lib/.+\.rb$})
+#   # watch('Gemfile')
+# end
 
 guard 'spring', bundler: true do
   watch('Gemfile.lock')

@@ -10,6 +10,25 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+@charset 'UTF-8';
+
+@import 'settings/colors';
+@import 'settings/variables';
+@import 'settings/tools';
+
+@import 'generic/reset';
+@import 'generic/layout';
+@import 'generic/typography';
+
+@import 'elements/body';
+@import 'elements/buttons';
+@import 'elements/description_list';
+@import 'elements/hr';
+@import 'elements/inputs';
+@import 'elements/label';
+@import 'elements/links';
+@import 'elements/select';
+
+@import 'components/blog_entry';
+@import 'components/form_group';

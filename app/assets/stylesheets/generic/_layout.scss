@@ -1,0 +1,8 @@
+.blogger-container {
+  display: grid;
+  position: relative;
+  min-height: 100vh;
+  grid-template-columns: 1fr 40em 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+

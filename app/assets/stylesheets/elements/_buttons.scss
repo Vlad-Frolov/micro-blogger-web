@@ -1,0 +1,87 @@
+[type='submit'],
+.btn-primary {
+  @include btn-base;
+  border: 1px solid $primary-color;
+  background-color: $primary-color;
+  color: $on-dark-copy;
+
+  &:visited,
+  &:hover,
+  &:active {
+    color: $on-dark-copy;
+  }
+}
+
+button,
+.btn-secondary {
+  @include btn-base;
+  border: 1px solid $primary-color;
+  background-color: $white;
+  text-decoration: none;
+  color: $primary-color;
+  font-weight: $font-regular;
+}
+
+.btn-tertiary {
+  @include btn-base;
+  border-color: $primary-color;
+  background-color: $white;
+  color: $primary-color;
+}
+
+.btn-flat {
+  @include btn-base;
+  padding: 0.6em 0;
+
+  &:visited,
+  &:hover,
+  &:active {
+    box-shadow: none;
+    text-decoration: underline;
+  }
+}
+
+.btn-flat-secondary {
+  @include btn-base;
+  padding: 0.6em 0;
+  color: $secondary-copy;
+  font-weight: $font-regular;
+
+  &:visited,
+  &:hover,
+  &:active {
+    box-shadow: none;
+    text-decoration: underline;
+    color: $secondary-copy;
+  }
+}
+
+.btn-danger {
+  @include btn-base;
+  border-color: $error;
+  background-color: $error;
+  text-decoration: none;
+  color: $on-dark-copy;
+
+  &:visited,
+  &:hover,
+  &:active {
+    color: $on-dark-copy;
+  }
+}
+
+.btn-danger-secondary {
+  @include btn-base;
+  padding: 0.6em 0;
+  text-decoration: none;
+  color: $error;
+  font-weight: $font-regular;
+
+  &:visited,
+  &:hover,
+  &:active {
+    box-shadow: none;
+    text-decoration: underline;
+    color: $error;
+  }
+}

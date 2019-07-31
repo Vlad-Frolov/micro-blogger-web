@@ -1,0 +1,26 @@
+= form_for(user) do |f|
+  - if user.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(user.errors.count, "error")
+        prohibited this user from being saved:
+      %ul
+        - user.errors.full_messages.each do |message|
+          %li= message
+
+  .form-group
+    = f.label :display_name
+    = f.text_field :display_name
+
+  .form-group
+    = f.label :email
+    = f.text_field :email
+
+  - if current_user.acts_as_admin?
+    .form-group
+      = f.label :role
+      = f.select :role, nil do
+        = options_for_select User.roles.collect{ |s| [s[0].titlecase, s[0]]} , user&.role
+
+  .form-group
+    = f.submit

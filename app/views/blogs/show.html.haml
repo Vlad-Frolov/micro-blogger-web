@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Article:
+  = @blog.article
+%p
+  %b Published date:
+  = @blog.published_date
+%p
+  %b Title:
+  = @blog.title
+%p
+  %b Author:
+  = @blog.author.display_name
+
+= link_to 'Edit', edit_blog_path(@blog)
+\|
+= link_to 'Back', blogs_path

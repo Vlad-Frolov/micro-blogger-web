@@ -1,0 +1,42 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  display_name    :string           not null
+#  email           :string           not null
+#  password_digest :string           not null
+#  role            :integer          default("author"), not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+# Indexes
+#
+#  index_users_on_email  (email)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+admin:
+  display_name: Awesome Admin
+  email: awesome.admin@mailinator.com
+  password_digest: <%= BCrypt::Password.create("password", cost: 4) %>
+  role: admin
+
+author:
+  display_name: lePhil
+  email: lephil@mailinator.com
+  password_digest: <%= BCrypt::Password.create("password", cost: 4) %>
+  role: author
+
+sally:
+  display_name: Sally String
+  email: sally.string@mailinator.com
+  password_digest: <%= BCrypt::Password.create("password", cost: 4) %>
+  role: author
+
+michelle:
+  display_name: Mighty Michelle
+  email: mighty.michelle@mailinator.com
+  password_digest: <%= BCrypt::Password.create("password", cost: 4) %>
+  role: author

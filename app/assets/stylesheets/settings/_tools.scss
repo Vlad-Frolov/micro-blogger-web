@@ -1,0 +1,67 @@
+@mixin slim-ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+}
+
+@mixin btn-base {
+  display: inline-block;
+  margin: 1em 1em 0.5em 0;
+  border: 0;
+  padding: 0.54em 1.2em;
+  line-height: 1.375em;
+  color: $primary-color;
+  font-family: $default-font;
+  font-size: 1em;
+  font-weight: $font-bold;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &:hover,
+  &:active {
+    box-shadow: 0 1px 5px 1px rgba($button-shadow, 0.4);
+    cursor: pointer;
+    color: $primary-color;
+  }
+
+  td & {
+    margin: 0 0.5em 0 0;
+    padding: 0;
+  }
+}
+
+@mixin base-input {
+  border: 1px solid $form-border-color;
+  border-radius: $border-radius-sm;
+  background-color: $white;
+  padding: 0.5em 0.5625em;
+  width: 100%;
+  max-width: $max-form-width;
+  line-height: 1.375em;
+  color: $primary-copy;
+  font-size: 1em;
+  font-weight: $font-regular;
+  box-sizing: border-box;
+
+  &:hover {
+    border-color: $form-border-color;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $form-border-color;
+    box-shadow: 0 0 1px 1px rgba($primary-color, 0.7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+  }
+
+  &:disabled {
+    background-color: $disabled;
+    color: $disabled-copy;
+  }
+}

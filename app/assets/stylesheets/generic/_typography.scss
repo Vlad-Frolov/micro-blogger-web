@@ -1,0 +1,71 @@
+html {
+  line-height: 1.375em;
+  color: $primary-copy;
+  font-family: $default-font;
+  font-size: 16px;
+  font-weight: $font-regular;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: $default-block-margin;
+}
+
+.h1-style,
+h1 {
+  line-height: 1.375em;
+  font-size: 1.75em;
+  font-weight: $font-semi;
+}
+
+.h2-style,
+h2 {
+  line-height: 1.416666667em;
+  font-size: 1.5em;
+  font-weight: $font-regular;
+}
+
+.h3-style,
+h3 {
+  line-height: 1.4em;
+  font-size: 1.25em;
+  font-weight: $font-regular;
+}
+
+.h4-style,
+h4 {
+  font-weight: $font-bold;
+}
+
+label {
+  color: $secondary-copy;
+  font-weight: $font-bold;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.demphasized-text {
+  color: $secondary-copy;
+  font-size: 0.9em;
+}
+
+.text-success {
+  color: $success;
+}
+
+.text-error {
+  color: $error;
+}
