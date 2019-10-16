@@ -9,7 +9,7 @@ have it running for every dev change/session.
 
 ### Initial setup
 
-* rvm install ruby-2.6.2
+* rvm install ruby-2.6.2 (or your ruby version manager of choice)
 * bundle install
 * rake db:create
 * rake db:migrate

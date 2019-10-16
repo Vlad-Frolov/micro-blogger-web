@@ -17,6 +17,16 @@
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
+@modified_times ||= {}
+def check_time file
+  mtime = File.mtime(file)
+
+  return if @modified_times[file] == mtime
+
+  @modified_times[file] = mtime
+  yield file
+end
+
 guard :minitest, spring: "bin/rails test", all_after_pass: true do
   watch(%r{^app/(.+)\.rb$}) { |m| ["test/#{m[1]}", "test/#{m[1]}_test.rb"] }
   watch(%r{^app/controllers/(admin|application)_controller\.rb$}) { 'test/controllers' }
@@ -50,13 +60,14 @@ guard :shell, all_on_start: true do
   # end
 
   # sass-lint
-  watch %r{app/assets/stylesheets/*/.*scss$} do |file|
-    system %(echo "sass-lint:\033[32m #{file[0]}\033[0m")
-    system %(sass-lint --cache --config .sass-lint.yml '#{file[0]}' --verbose --no-exit)
+  watch %r{app/assets/stylesheets/*/.*scss$} do |match|
+    check_time(match[0]) do |file|
+      system %(echo "sass-lint:\033[32m #{file}\033[0m")
+      system %(sass-lint --cache --config .sass-lint.yml '#{file}' --verbose --no-exit)
+    end
   end
 end
 
-# Haml update broke this
 # guard 'brakeman', run_on_start: true, quiet: true do
 #   ## Lets not watch files for brakeman, just scan on guard start, and full runs.
 #   #

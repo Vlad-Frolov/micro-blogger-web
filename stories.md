@@ -8,10 +8,11 @@ A micro blogging platform
 
 ## Tasks
 
-### Login/out Header links
+### Header/.Menu bar
 
 * Create a header bar that contains conditional login/logout links
-* Admins should also have a link to manage users
+* Users should have a link to edit their user info
+* Admins should also have a link to users#index
 
 ### User Bios
 
