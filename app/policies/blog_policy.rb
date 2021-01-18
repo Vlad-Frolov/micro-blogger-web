@@ -31,6 +31,7 @@ class BlogPolicy < ApplicationPolicy
     %i[
       title
       article
+      published_date
     ]
   end
 

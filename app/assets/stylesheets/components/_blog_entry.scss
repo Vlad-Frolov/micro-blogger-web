@@ -6,3 +6,30 @@
     font-weight: $font-semi;
   }
 }
+
+.blogger-header {
+	background-color: black;
+
+	a {
+		display: inline-block;
+		color: white;
+		padding: 16px;
+	}
+}
+
+.admin_users_table {
+	font-size: 16px;
+	width: 100%;
+	border-collapse: collapse;
+
+	tr:nth-child(even) {
+		background-color: silver;
+	}
+
+	td {
+		border: 2px solid white;
+		padding: 18px;
+		display: table-cell;
+		text-align: left
+	}
+}

@@ -3,6 +3,7 @@ textarea,
 [type='password'],
 [type='email'],
 [type='tel'],
-[type='number'] {
+[type='number'],
+[type='date'] {
   @include base-input;
 }

@@ -7,6 +7,7 @@
   %section.blog-entry
     %h2= blog.title
     %p= blog.article
+    %p= blog.author.bio
     .author-tag
       = blog.author.display_name
       - unless blog.published_date.blank?

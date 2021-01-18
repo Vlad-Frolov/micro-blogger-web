@@ -38,6 +38,7 @@ class UserPolicy < ApplicationPolicy
       email
       password
       password_confirmation
+      bio
     ]
   end
 

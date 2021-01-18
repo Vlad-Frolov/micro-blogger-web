@@ -16,6 +16,13 @@
 
   %body.blogger-container
     %header.blogger-header
+      = link_to 'Main', root_path
+      - unless current_user
+        = link_to 'Login', login_path
+      - else
+        = link_to 'Log Out', logout_path
+        = link_to 'Edit', edit_user_path(current_user)
+        = admin_users_link
 
     %main.blogger-main
       = render partial: 'shared/flash'

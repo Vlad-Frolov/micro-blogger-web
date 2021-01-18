@@ -16,6 +16,10 @@
     = f.label :email
     = f.text_field :email
 
+  .form-group
+    = f.label :bio
+    = f.text_field :bio
+
   - if current_user.acts_as_admin?
     .form-group
       = f.label :role

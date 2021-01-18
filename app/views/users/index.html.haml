@@ -3,7 +3,7 @@
 - if policy(User).create?
   = link_to 'Create User', new_user_path
 
-%table
+	%table{class: 'admin_users_table'}
   %tbody
     - @users.each do |user|
       %tr
@@ -11,3 +11,4 @@
         %td= user.email
         %td= user.role
         %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+}
